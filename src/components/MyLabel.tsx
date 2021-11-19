@@ -27,6 +27,12 @@ interface Props {
    */
 
   fontColor?: string;
+
+  /**
+   *  Color personalizado del fondo.
+   */
+
+  backgroundColor?: string;
 }
 
 export const MyLabel = ({
@@ -35,6 +41,7 @@ export const MyLabel = ({
   allCaps = false,
   color = "primary",
   fontColor,
+  backgroundColor = "transparent",
 }: Props) => {
   const className = ["label", size, `text-${color}`].join(" ");
   const textToDisplay = allCaps ? label.toUpperCase() : label;
@@ -43,6 +50,7 @@ export const MyLabel = ({
       className={className}
       style={{
         color: fontColor,
+        backgroundColor,
       }}
     >
       {textToDisplay}
